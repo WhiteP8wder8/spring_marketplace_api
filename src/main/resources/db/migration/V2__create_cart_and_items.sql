@@ -1,0 +1,13 @@
+CREATE TABLE carts(
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    owner_id UUID NOT NULL UNIQUE
+);
+
+CREATE TABLE cart_items(
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    cart_id BIGINT NOT NULL REFERENCES carts(id) ON DELETE CASCADE,
+    product_id BIGINT NOT NULL REFERENCES products(id),
+    quantity INTEGER NOT NULL CHECK ( quantity > 0 ),
+
+    UNIQUE (cart_id, product_id)
+);
