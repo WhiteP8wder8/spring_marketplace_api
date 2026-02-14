@@ -116,7 +116,7 @@ docker-compose up -d
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/WhiteP8wder8/spring_marketplace_api.git
+git clone https://github.com/Sany8k/spring_marketplace_api.git
 cd spring_marketplace_api
 ```
 2. Install dependencies:
